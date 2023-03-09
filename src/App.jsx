@@ -1,26 +1,24 @@
-import logo from './logo.svg';
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/jsx-no-constructed-context-values */
+
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UseContext from './context';
+import Landing from './Pages/Landing/Landing';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UseContext.Provider value={{}}>
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </UseContext.Provider>
   );
 }
 

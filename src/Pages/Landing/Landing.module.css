@@ -1,0 +1,35 @@
+.main {
+  background-color: #fc0c5c;
+  height: 100vh;
+  margin: auto;
+  padding: 0px;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.welcome {
+  color: #fff;
+  width: 50%;
+  text-shadow: #353535a8 5px 5px 5px;
+}
+
+.welcome h2 {
+  font-size: 45px;
+  font-family: 'Roboto';
+}
+
+.welcome h2 span {
+  font-family: 'Climate Crisis';
+  letter-spacing: 2px;
+}
+
+.body img {
+  height: 600px;
+  box-shadow: #34031963 -10px -5px 5px;
+}
