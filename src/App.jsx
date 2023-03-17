@@ -5,8 +5,10 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UseContext from './context';
 import Landing from './Pages/Landing/Landing';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Home from './Pages/Home/Home';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route index path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </UseContext.Provider>

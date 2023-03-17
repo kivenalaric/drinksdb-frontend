@@ -1,0 +1,47 @@
+.main {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #797878;
+}
+
+.form_main {
+  background-color: #f64d85;
+  padding: 8px 16px;
+}
+
+.form_main h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 35px;
+  font-family: 'Lora';
+  font-style: italic;
+  text-shadow: #500f2584 5px 5px 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  gap: 15px;
+}
+
+.form input {
+  padding: 3px 7px;
+  height: 30px;
+}
+
+.register {
+  font-size: 18px;
+}
+
+.register button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-style: italic;
+  text-decoration: underline;
+  border: none;
+}

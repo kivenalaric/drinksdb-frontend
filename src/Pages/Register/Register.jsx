@@ -1,11 +1,16 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import RegisterCss from './Register.module.css';
+import { register } from '../../api/auth';
 
 function Register() {
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const toLogin = () => {
+    navigate('/login');
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { target } = e;
     const data = {
@@ -17,6 +22,8 @@ function Register() {
       passwordConfirmation: target.passwordConfirmation.value,
     };
     console.log(data);
+    await register(data);
+    navigate('/login');
   };
   return (
     <div className={RegisterCss.main}>
@@ -36,7 +43,7 @@ function Register() {
             name="emailAddress"
             required
           />
-          <input type="phone" placeholder="Name" name="phone" required />
+          <input type="phone" placeholder="Phone" name="phone" required />
           <input
             type="password"
             placeholder="Password"
@@ -53,6 +60,12 @@ function Register() {
             Create Account
           </button>
         </div>
+        <p className={RegisterCss.tolog}>
+          Already Have an Account{' '}
+          <button type="button" onClick={toLogin}>
+            Login
+          </button>{' '}
+        </p>
       </form>
     </div>
   );

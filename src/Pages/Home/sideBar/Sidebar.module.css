@@ -1,0 +1,42 @@
+.main {
+  /* width: 20%; */
+  /* position: fixed; */
+  background-color: #fff;
+  height: 100vh;
+  padding: 10px 20px;
+}
+
+.categories_head {
+  font-family: 'Roboto';
+  color: #fc7819;
+  font-weight: 700;
+  font-size: 25px;
+  text-shadow: #371c0874 4px 3px 5px;
+  margin-bottom: 2px;
+}
+
+.categories_hr {
+  height: 2px;
+  background-color: #000;
+  width: 100%;
+}
+
+.drink_sec {
+  gap: 5px;
+}
+
+.drink_properties {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* .main__inner {
+  border: 1px solid #000;
+  width: 100%;
+} */
+
+.main__inner p {
+  text-decoration: underline;
+  cursor: pointer;
+}

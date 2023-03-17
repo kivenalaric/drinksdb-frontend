@@ -1,0 +1,72 @@
+.main {
+  background-color: antiquewhite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main h1 {
+  font-family: 'Lora';
+  text-decoration: 2px underline;
+}
+
+.main h1 span {
+  font-family: 'Climate Crisis';
+  letter-spacing: 2px;
+}
+
+.userbox {
+  background-color: #fcdb8ee4;
+  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+  padding: 20px 10px;
+  display: flex;
+  height: 70%;
+  flex-direction: column;
+}
+
+.user_pic {
+  width: 100px;
+  height: 100px;
+  align-self: center;
+}
+
+.user_h3 {
+  align-self: center;
+}
+
+.user_info {
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info {
+  background-color: antiquewhite;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.edit_btn {
+  width: 95%;
+  padding: 8px 2px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: auto;
+  align-self: flex-end;
+}
+
+.profile_icon {
+  width: 25px;
+  height: 25px;
+}

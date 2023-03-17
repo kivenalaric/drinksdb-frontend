@@ -16,7 +16,8 @@
   color: #fff;
   font-weight: 700;
   font-size: 35px;
-  font-family: 'Roboto';
+  font-family: 'Lora';
+  font-style: italic;
   text-shadow: #500f2584 5px 5px 5px;
 }
 
@@ -48,4 +49,17 @@
   background-color: #f85f94;
   color: #fff;
   transition: 0.7s;
+}
+
+.toLog {
+  font-size: 18px;
+}
+
+.tolog button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-style: italic;
+  text-decoration: underline;
+  border: none;
 }

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import Header from '../../Components/Header/Header';
 import LandingCss from './Landing.module.css';
