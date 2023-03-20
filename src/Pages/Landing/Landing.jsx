@@ -5,7 +5,9 @@ import LandingCss from './Landing.module.css';
 function Landing() {
   return (
     <div className={LandingCss.main}>
-      <Header />
+      <div className={LandingCss.head}>
+        <Header />
+      </div>
       <div className={LandingCss.body}>
         <div className={LandingCss.welcome}>
           <h2>

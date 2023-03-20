@@ -8,7 +8,7 @@ import Landing from './Pages/Landing/Landing';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import Home from './Pages/Home/Home';
+import Drinks from './Pages/Home/Home';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/drinks" element={<Drinks />} />
         </Routes>
       </BrowserRouter>
     </UseContext.Provider>

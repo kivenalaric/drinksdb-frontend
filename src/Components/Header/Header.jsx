@@ -12,6 +12,9 @@ function Header() {
   const toHome = () => {
     navigate('/');
   };
+  const toDrinks = () => {
+    navigate('/drinks');
+  };
   const toLogin = () => {
     navigate('/login');
   };
@@ -22,9 +25,11 @@ function Header() {
           <h1>dRinksDB</h1>
         </div>
         <div className={HeaderCss.header_right}>
-          <button type="button">Our Drinks</button>
           <button type="button" onClick={toHome}>
             Home
+          </button>
+          <button type="button" onClick={toDrinks}>
+            Our Drinks
           </button>
           <button type="button" onClick={toSignUp}>
             SignUp

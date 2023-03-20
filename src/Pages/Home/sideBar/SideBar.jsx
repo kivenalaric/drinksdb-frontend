@@ -10,7 +10,7 @@ function SideBar() {
       <div>
         <h3 className={SideBarCss.categories_head}>Drink Categories</h3>
         <hr className={SideBarCss.categories_hr} />
-        <div>
+        <div className={SideBarCss.drink_sec}>
           <div className={SideBarCss.drink_properties}>
             <input type="checkbox" />
             <p>Whiskey</p>
@@ -55,12 +55,22 @@ function SideBar() {
       <div>
         <h3 className={SideBarCss.categories_head}>Drink Glasses</h3>
         <hr className={SideBarCss.categories_hr} />
-        <div>
-          <ul>
-            {/* <li>Long</li>
+        <div className={SideBarCss.drink_sec}>
+          <div className={SideBarCss.drink_properties}>
+            <input type="checkbox" />
+            <p>Long</p>
+          </div>
+          <div className={SideBarCss.drink_properties}>
+            <input type="checkbox" />
+            <p>Medium</p>
+          </div>
+          <div className={SideBarCss.drink_properties}>
+            <input type="checkbox" />
+            <p>Small</p>
+          </div>
+          {/* <li>Long</li>
             <li>Medium</li>
             <li>Small</li> */}
-          </ul>
         </div>
       </div>
       <div>
@@ -79,6 +89,14 @@ function SideBar() {
         <h3 className={SideBarCss.categories_head}>Is Alcoholic?</h3>
         <hr className={SideBarCss.categories_hr} />
         <div>
+          <div className={SideBarCss.drink_properties}>
+            <input type="checkbox" />
+            <p>Yes</p>
+          </div>
+          <div className={SideBarCss.drink_properties}>
+            <input type="checkbox" />
+            <p>No</p>
+          </div>
           <ul>
             {/* <li>Yes</li>
             <li>No</li> */}

@@ -5,10 +5,12 @@ import HomeCss from './Home.module.css';
 import SideBar from './sideBar/SideBar';
 import data from '../../drinksdb';
 
-function Home() {
+function Drinks() {
   return (
     <div>
-      <Header />
+      <div className={HomeCss.head}>
+        <Header />
+      </div>
       <div className={HomeCss.main}>
         <div className={HomeCss.left}>
           <SideBar />
@@ -34,4 +36,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Drinks;

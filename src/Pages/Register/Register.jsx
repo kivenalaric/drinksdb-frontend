@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RegisterCss from './Register.module.css';
 import { register } from '../../api/auth';
 
 function Register() {
   const navigate = useNavigate();
+  const [passCheck, setPassCheck] = useState('');
   const toLogin = () => {
     navigate('/login');
   };
@@ -22,8 +23,12 @@ function Register() {
       passwordConfirmation: target.passwordConfirmation.value,
     };
     console.log(data);
-    await register(data);
-    navigate('/login');
+    if (target.password.value !== target.passwordConfirmation.value) {
+      setPassCheck("Passwords Don't Match");
+    } else {
+      await register(data);
+      navigate('/login');
+    }
   };
   return (
     <div className={RegisterCss.main}>
@@ -60,6 +65,7 @@ function Register() {
             Create Account
           </button>
         </div>
+        {passCheck && <p className={RegisterCss.pass_fail}>{passCheck}</p>}
         <p className={RegisterCss.tolog}>
           Already Have an Account{' '}
           <button type="button" onClick={toLogin}>

@@ -41,6 +41,7 @@ function Login() {
       <form action="" className={LoginCss.form_main} onSubmit={handleSubmit}>
         <h1>Please Login</h1>
         <div className={LoginCss.form}>
+          {error && <p className={LoginCss.login_err}>{error}</p>}
           <input type="email" name="emailAddress" placeholder="Email Address" />
           <input type="password" name="password" placeholder="Password" />
           <button type="submit">Login</button>
