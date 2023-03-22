@@ -1,7 +1,14 @@
 .main {
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   height: 100vh;
   display: flex;
+  background-image: linear-gradient(
+      to bottom right,
+      #ffd9009f 0 35%,
+      #ffbb007c 0 65%,
+      #5f211076 0 30%
+    ),
+    url('https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=600');
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -21,14 +28,15 @@
 }
 
 .userbox {
-  background-color: #fcdb8ee4;
+  background-color: #fcc950;
   border-radius: 5px;
   width: 50%;
   margin: auto;
   padding: 20px 10px;
   display: flex;
-  height: 70%;
+  height: fit-content;
   flex-direction: column;
+  box-shadow: #000 5px 5px 5px;
 }
 
 .user_pic {
@@ -53,6 +61,16 @@
   padding: 5px;
   margin: 10px;
   border-radius: 5px;
+  border: none;
+}
+
+.info_disable {
+  background-color: antiquewhite;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  pointer-events: none;
 }
 
 .edit_btn {
@@ -72,4 +90,22 @@
 .profile_icon {
   width: 25px;
   height: 25px;
+}
+
+.logout_btn {
+  cursor: pointer;
+  border: none;
+  width: 100px;
+  padding: 5px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    align-items: center;
+    height: fit-content;
+  }
+  .userbox {
+    width: 80%;
+    height: fit-content;
+  }
 }

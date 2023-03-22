@@ -1,28 +1,37 @@
-/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
 /* eslint-disable prettier/prettier */
-import React, { useEffect, useState } from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-console */
+import React from 'react';
 import { FaUserCircle, FaUserEdit } from 'react-icons/fa';
-import { getCurrentUser } from '../../api/auth';
+import { useNavigate } from 'react-router-dom';
+import { updateCurrentUser } from '../../api/auth';
+import AuthGuard from '../../Components/AuthGuard/AuthGuard';
 import DashboardCss from './Dashboard.module.css';
 
-function Dashboard() {
-  const [user, setUser] = useState();
+function Dashboard({ user }) {
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    getCurrentUser().then(setUser);
-  }, []);
-
-  const updateUser = (e) => {
+  const updateUser = async (e) => {
     e.preventDefault();
     const { target } = e;
     const data = {
+      id: user.id,
       firstName: target.firstName.value,
       lastName: target.lastName.value,
       phone: target.phone.value,
     };
-
     console.log(data);
-    // await updateUser(data);
+    await updateCurrentUser(data);
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    navigate('/', { replace: true });
+    window.location.reload(true);
   };
 
   return (
@@ -34,21 +43,41 @@ function Dashboard() {
         <FaUserCircle className={DashboardCss.user_pic} />
         <h2 className={DashboardCss.user_h3}>My Profile</h2>
         <div className={DashboardCss.user_info}>
-          <p name="firstName" type="text" className={DashboardCss.info}>
-            FirstName: {user?.firstName}
-          </p>
-          <p name="lastName" type="text" className={DashboardCss.info}>
-            LastName: {user?.lastName}
-          </p>
-          <p name="emailAddress" type="email" className={DashboardCss.info}>
-            Email Address: {user?.emailAddress}
-          </p>
-          <p name="phone" type="phone" className={DashboardCss.info}>
-            Phone: {user?.phone}
-          </p>
-          <p name="apKey" type="text" className={DashboardCss.info}>
-            ApiKey: {user?.apiKey}
-          </p>
+          <label htmlFor="firstname">Last Name</label>
+          <input
+            name="firstName"
+            type="text"
+            className={DashboardCss.info}
+            defaultValue={user?.firstName}
+          />
+          <label htmlFor="lastname">Last Name</label>
+          <input
+            name="lastName"
+            type="text"
+            className={DashboardCss.info}
+            defaultValue={user?.lastName}
+          />
+          <label htmlFor="emailaddress"> Email Address</label>
+          <input
+            name="emailAddress"
+            type="email"
+            className={DashboardCss.info_disable}
+            defaultValue={user?.emailAddress}
+          />
+          <label htmlFor="phone">Phone</label>
+          <input
+            name="phone"
+            type="phone"
+            className={DashboardCss.info}
+            defaultValue={user?.phone}
+          />
+          <label htmlFor="apikey">ApiKey</label>
+          <input
+            name="apKey"
+            type="text"
+            className={DashboardCss.info_disable}
+            defaultValue={user?.apiKey}
+          />
           <button
             className={DashboardCss.edit_btn}
             title="Edit Profile"
@@ -58,10 +87,15 @@ function Dashboard() {
           </button>
         </div>
       </form>
-      <button className={DashboardCss.edit_btn} title="drinks" type="button">
-        Our Drinks
+      <button
+        className={DashboardCss.logout_btn}
+        onClick={logout}
+        title="logout"
+        type="button"
+      >
+        LogOut
       </button>
     </div>
   );
 }
-export default Dashboard;
+export default AuthGuard(Dashboard);

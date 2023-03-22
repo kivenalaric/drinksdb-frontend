@@ -1,7 +1,3 @@
-/* .head {
-  position: fixed;
-} */
-
 .main {
   width: 100vw;
   display: flex;
@@ -11,7 +7,19 @@
 }
 
 .right {
-  width: 75%;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.head {
+  top: 0;
+  position: sticky;
+}
+
+.right_drinks {
+  width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;

@@ -24,7 +24,7 @@
 
 .header_right button {
   padding: 3px 8px;
-  background-color: #f85f94;
+  background-color: #ec9f12;
   color: #fff;
   border: none;
   font-size: 18px;
@@ -34,7 +34,7 @@
 }
 
 .header_right button:hover {
-  color: #f85f94;
+  color: #ec9f12;
   background-color: #fff;
   transition: 0.7s;
 }

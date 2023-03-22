@@ -7,15 +7,15 @@ import data from '../../drinksdb';
 
 function Drinks() {
   return (
-    <div>
-      <div className={HomeCss.head}>
-        <Header />
+    <div className={HomeCss.main}>
+      <div className={HomeCss.left}>
+        <SideBar />
       </div>
-      <div className={HomeCss.main}>
-        <div className={HomeCss.left}>
-          <SideBar />
+      <div className={HomeCss.right}>
+        <div className={HomeCss.head}>
+          <Header />
         </div>
-        <div className={HomeCss.right}>
+        <div className={HomeCss.right_drinks}>
           {data.map((drinks) => {
             return (
               <div key={drinks.name} className={HomeCss.drink_card}>

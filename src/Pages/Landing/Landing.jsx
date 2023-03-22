@@ -13,7 +13,7 @@ function Landing() {
           <h2>
             Welcome To The <span>dRinksDB</span>
           </h2>
-          <p>
+          <p className={LandingCss.p}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
             necessitatibus suscipit voluptas in excepturi architecto sunt
             dolorem neque officiis pariatur est saepe itaque non, odit

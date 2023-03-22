@@ -48,7 +48,11 @@ function Login() {
         </div>
         <p className={LoginCss.register}>
           Don't have an account yet
-          <button type="button" onClick={toRegister}>
+          <button
+            type="button"
+            className={LoginCss.login_btn}
+            onClick={toRegister}
+          >
             Register
           </button>
         </p>

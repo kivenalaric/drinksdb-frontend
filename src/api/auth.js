@@ -14,6 +14,6 @@ export function getCurrentUser() {
   return httpClient.get("current-user").then(({ data }) => data);
 }
 
-// export function updateCurrentUser(data) {
-//   return httpClient.patch(`users/${data.id}`, data);
-// }
+export function updateCurrentUser(data) {
+  return httpClient.patch(`users/${data.id}`, data);
+}
