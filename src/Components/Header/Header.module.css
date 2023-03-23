@@ -38,3 +38,28 @@
   background-color: #fff;
   transition: 0.7s;
 }
+
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 100vw;
+  }
+
+  .header_left h1 {
+    font-size: 16px;
+  }
+
+  .header {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header_right {
+    gap: 10px;
+  }
+
+  .header_right button {
+    width: fit-content;
+    padding: 2px 5px;
+    font-size: 14px;
+  }
+}

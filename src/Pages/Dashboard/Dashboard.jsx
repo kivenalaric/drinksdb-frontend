@@ -5,7 +5,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
 import { FaUserCircle, FaUserEdit } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { updateCurrentUser } from '../../api/auth';
@@ -14,6 +14,7 @@ import DashboardCss from './Dashboard.module.css';
 
 function Dashboard({ user }) {
   const navigate = useNavigate();
+  const [success, setSuccess] = useState('');
 
   const updateUser = async (e) => {
     e.preventDefault();
@@ -26,6 +27,9 @@ function Dashboard({ user }) {
     };
     console.log(data);
     await updateCurrentUser(data);
+    setSuccess('Done updating profile');
+    window.location.reload(true);
+    setSuccess('');
   };
 
   const logout = () => {
@@ -36,6 +40,7 @@ function Dashboard({ user }) {
 
   return (
     <div className={DashboardCss.main}>
+      {success ?? <p>{success}</p>}
       <h1>
         Welcome To The <span>dRinksDB</span>
       </h1>

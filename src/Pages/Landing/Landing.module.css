@@ -1,7 +1,16 @@
 .main {
-  background-color: #fc0c5c;
+  /* background-color: #fc0c5c; */
   height: 100vh;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #d89102;
+  padding: 0px;
+}
+
+.body {
+  display: flex;
+  margin-bottom: 0;
   background-image: radial-gradient(
       circle at center,
       #fbe56cd7,
@@ -13,11 +22,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 0px;
-}
-
-.body {
-  display: flex;
   align-items: center;
   padding: 20px 40px;
   margin: auto;
@@ -27,6 +31,7 @@
 .welcome {
   color: #fff;
   width: 50%;
+  margin: auto;
   text-shadow: #353535a8 5px 5px 5px;
 }
 
@@ -55,4 +60,20 @@
 .p {
   font-size: 18px;
   text-shadow: #000 3px 3px 3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .body {
+    flex-direction: column;
+  }
+
+  .welcome {
+    text-align: left;
+    width: 80%;
+  }
+
+  .welcome h2 {
+    font-size: 25px;
+    font-family: 'Roboto';
+  }
 }
